@@ -43,15 +43,17 @@ namespace PrestacionMedicaMvc.Controllers
                 return NotFound();
             }
 
-            var expediente = await _context.Expediente
+            var expediente = await _context.Expediente.Include(m=>m.Empleado)
                 .SingleOrDefaultAsync(m => m.NumCarnet == id);
             if (expediente == null)
             {
                 return NotFound();
             }
 
-            var empleado = expediente.Empleado;
+            /*var datosEmpleado = expediente.Empleado;
 
+            var Empleado = await _context.Empleado
+                .SingleOrDefaultAsync(n => n.IDempleado == datosEmpleado.IDempleado);*/
 
             return View(expediente);
         }
