@@ -1,0 +1,78 @@
+@model IEnumerable<PrestacionMedicaMvc.Models.Empleado>
+
+@{
+    ViewData["Title"] = "Nómina Empleados";
+}
+
+<h2>Empleados</h2>
+
+<p>
+    <a asp-action="Create">Agregar nuevo empleado</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Apellido)
+                </th>
+                 <th>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Status)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NombrePlanilla)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DUI)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NumeroCuenta)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TipoCuenta)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CentroDeCosto)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombrePlanilla)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DUI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroCuenta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoCuenta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CentroDeCosto)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IDempleado">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.IDempleado">Detalles</a> |
+                <!-- <a asp-action="Delete" asp-route-id="@item.IDempleado">Inactivar</a> -->
+                <a asp-controller="Expedientes" asp-action="Index" asp-route-idEmpleado="@item.IDempleado">Expedientes</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,91 @@
+@model PrestacionMedicaMvc.Models.Empresa
+
+@{
+    ViewData["Title"] = "Creación Empresas";
+}
+
+<h2>Crear</h2>
+
+<h4>Empresa</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NombreEmpresa" class="control-label"></label>
+                <input asp-for="NombreEmpresa" class="form-control" />
+                <span asp-validation-for="NombreEmpresa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RazonSocial" class="control-label"></label>
+                <input asp-for="RazonSocial" class="form-control" />
+                <span asp-validation-for="RazonSocial" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumPatronal" class="control-label"></label>
+                <input asp-for="NumPatronal" class="form-control" />
+                <span asp-validation-for="NumPatronal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NIT" class="control-label"></label>
+                <input asp-for="NIT" class="form-control" />
+                <span asp-validation-for="NIT" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telefono" class="control-label"></label>
+                <input asp-for="Telefono" class="form-control" />
+                <span asp-validation-for="Telefono" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Direccion" class="control-label"></label>
+                <input asp-for="Direccion" class="form-control" />
+                <span asp-validation-for="Direccion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Municipio" class="control-label"></label>
+                <input asp-for="Municipio" class="form-control" />
+                <span asp-validation-for="Municipio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Departamento" class="control-label"></label>
+                <input asp-for="Departamento" class="form-control" />
+                <span asp-validation-for="Departamento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumIva" class="control-label"></label>
+                <input asp-for="NumIva" class="form-control" />
+                <span asp-validation-for="NumIva" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IDBanco" class="control-label"></label>
+                <select class="form-control" name="seleccionBanco">
+                @{
+                    foreach (Banco banco in ViewBag.empresa.ListaBancos)
+                    {
+                        @:<option value="@banco.ID">@banco.NombreBanco</option>
+                    }
+                }
+                </select>
+                <!--<input asp-for="IDBanco" class="form-control" />
+                <span asp-validation-for="IDBanco" class="text-danger"></span>-->
+            </div>
+            <div class="form-group">
+                <label asp-for="NumCuentaBancaria" class="control-label"></label>
+                <input asp-for="NumCuentaBancaria" class="form-control" />
+                <span asp-validation-for="NumCuentaBancaria" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

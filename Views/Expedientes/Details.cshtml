@@ -1,0 +1,66 @@
+@model PrestacionMedicaMvc.Models.Expediente
+
+@{
+    ViewData["Title"] = "Detalles";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Expediente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Empleado.IDempleado)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Empleado.IDempleado)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Empleado.NombrePlanilla)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Empleado.NombrePlanilla)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Beneficiario)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Beneficiario)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Parentesco)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Parentesco)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaNacimiento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FechaNacimiento)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoDeducible)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TipoDeducible)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Activo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Activo)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.NumCarnet">Editar</a> |
+    <a asp-action="Index">Volver a la lista</a>
+</div>

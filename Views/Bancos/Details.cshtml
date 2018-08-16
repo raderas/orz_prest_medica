@@ -1,0 +1,48 @@
+@model PrestacionMedicaMvc.Models.Banco
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Banco</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreBanco)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NombreBanco)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CodigoCuentaAhorro)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CodigoCuentaAhorro)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CodigoCuentaCorriente)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CodigoCuentaCorriente)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FormatoArchivo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FormatoArchivo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Correlativo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Correlativo)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

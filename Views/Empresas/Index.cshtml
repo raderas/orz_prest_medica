@@ -1,0 +1,96 @@
+@model IEnumerable<PrestacionMedicaMvc.Models.Empresa>
+
+@{
+    ViewData["Title"] = "Mantenimiento Empresas";
+}
+
+<h2>Mantenimiento Empresas</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.NombreEmpresa)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RazonSocial)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NumPatronal)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NIT)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Telefono)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Direccion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Municipio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Departamento)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NumIva)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IDBanco)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NumCuentaBancaria)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreEmpresa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RazonSocial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumPatronal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NIT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Direccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Municipio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Departamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumIva)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDBanco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumCuentaBancaria)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <!-- OCULTANDO LA OPCION DELETE
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a> -->
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

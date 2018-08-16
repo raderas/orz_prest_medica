@@ -1,0 +1,87 @@
+@model PrestacionMedicaMvc.Models.Empresa
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Empresa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreEmpresa)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NombreEmpresa)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RazonSocial)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RazonSocial)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NumPatronal)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NumPatronal)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NIT)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NIT)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Telefono)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Direccion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Municipio)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Municipio)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Departamento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Departamento)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NumIva)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NumIva)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IDBanco)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IDBanco)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NumCuentaBancaria)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NumCuentaBancaria)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ID" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

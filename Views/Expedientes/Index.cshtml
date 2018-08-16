@@ -1,0 +1,67 @@
+@model IEnumerable<PrestacionMedicaMvc.Models.Expediente>
+
+@{
+    ViewData["Title"] = "Expedientes";
+}
+
+<h2>Expedientes</h2>
+ID Empleado: @ViewBag.IDempleado
+<br>
+Empleado: @ViewBag.NombreEmpleado
+<p>
+    <a asp-action="Create" asp-route-idempleado=@ViewBag.IDempleado>Nuevo expediente</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Beneficiario)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Parentesco)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FechaNacimiento)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TipoDeducible)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Activo)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Beneficiario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Parentesco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaNacimiento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoDeducible)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Activo)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.NumCarnet">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.NumCarnet">Detalles</a> |
+                <!--<a asp-action="Delete" asp-route-id="@item.NumCarnet">Inactivar</a> -->
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

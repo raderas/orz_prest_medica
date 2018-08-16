@@ -1,0 +1,111 @@
+@model PrestacionMedicaMvc.Models.Empleado
+
+@{
+    ViewData["Title"] = "Creación de Empleado";
+}
+
+<h2>Creación</h2>
+
+<h4>Empleado</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Empresa" class="control-label"></label>
+                <select class="form-control" name="seleccionEmpresa">
+                    @{
+                        foreach (Empresa empresa in ViewBag.empleado.ListaEmpresas)
+                        {
+                            @:<option value="@empresa.ID">@empresa.NombreEmpresa</option>
+                        }
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="IDempleado" class="control-label"></label>
+                <input asp-for="IDempleado" class="form-control" />
+                <span asp-validation-for="IDempleado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <select class="form-control" name="seleccionStatus">
+                @{
+                    foreach (KeyValuePair<Empleado.StatusEmpleado,string> opcionStatus in ViewBag.empleado.OpcionesStatusEmpleado)
+                    {
+                        @:<option value="@opcionStatus.Key">@opcionStatus.Value</option>
+                    }
+                }
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Apellido" class="control-label"></label>
+                <input asp-for="Apellido" class="form-control" />
+                <span asp-validation-for="Apellido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NombrePlanilla" class="control-label"></label>
+                <input asp-for="NombrePlanilla" class="form-control" />
+                <span asp-validation-for="NombrePlanilla" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DUI" class="control-label"></label>
+                <input asp-for="DUI" class="form-control" />
+                <span asp-validation-for="DUI" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumeroCuenta" class="control-label"></label>
+                <input asp-for="NumeroCuenta" class="form-control" />
+                <span asp-validation-for="NumeroCuenta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BancoCuenta" class="control-label"></label>
+                <select class="form-control" name="bancoSeleccionado">
+                @{
+                    List<PrestacionMedicaMvc.Models.Banco> listaBancos = ViewBag.empleado.ListaBancos;
+
+                    foreach (var banco in listaBancos)
+                    {
+                        @:<option value="@banco.ID">@banco.NombreBanco</option>
+                    }
+                }
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoCuenta" class="control-label"></label>
+                @{
+                    bool defaultSet = true;
+                    foreach (KeyValuePair<Banco.TipoCuenta,string> tipoCuenta in ViewBag.empleado.BancoCuenta.TiposCuentas)
+                    {
+                        @:<input type ="radio" id="@tipoCuenta.Key" name="seleccionTipoCuenta" value="@tipoCuenta.Key" checked="@defaultSet">
+                        @:<label for="@tipoCuenta.Key">@tipoCuenta.Value</label>
+                        if (!defaultSet) 
+                            {defaultSet = true;}
+                    }
+                }
+            </div>
+            <div class="form-group">
+                <label asp-for="CentroDeCosto" class="control-label"></label>
+                <input asp-for="CentroDeCosto" class="form-control" />
+                <span asp-validation-for="CentroDeCosto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Volver a la lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

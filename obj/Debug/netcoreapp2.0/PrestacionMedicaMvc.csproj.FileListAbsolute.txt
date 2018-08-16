@@ -1,0 +1,11 @@
+C:\Users\RADERAS\Documents\ProyDesarrollo\PrestacionMedicaMvc\bin\Debug\netcoreapp2.0\PrestacionMedicaMvc.deps.json
+C:\Users\RADERAS\Documents\ProyDesarrollo\PrestacionMedicaMvc\bin\Debug\netcoreapp2.0\PrestacionMedicaMvc.runtimeconfig.json
+C:\Users\RADERAS\Documents\ProyDesarrollo\PrestacionMedicaMvc\bin\Debug\netcoreapp2.0\PrestacionMedicaMvc.runtimeconfig.dev.json
+C:\Users\RADERAS\Documents\ProyDesarrollo\PrestacionMedicaMvc\bin\Debug\netcoreapp2.0\PrestacionMedicaMvc.dll
+C:\Users\RADERAS\Documents\ProyDesarrollo\PrestacionMedicaMvc\bin\Debug\netcoreapp2.0\PrestacionMedicaMvc.pdb
+C:\Users\RADERAS\Documents\ProyDesarrollo\PrestacionMedicaMvc\obj\Debug\netcoreapp2.0\PrestacionMedicaMvc.csproj.CoreCompileInputs.cache
+C:\Users\RADERAS\Documents\ProyDesarrollo\PrestacionMedicaMvc\obj\Debug\netcoreapp2.0\PrestacionMedicaMvc.AssemblyInfoInputs.cache
+C:\Users\RADERAS\Documents\ProyDesarrollo\PrestacionMedicaMvc\obj\Debug\netcoreapp2.0\PrestacionMedicaMvc.AssemblyInfo.cs
+C:\Users\RADERAS\Documents\ProyDesarrollo\PrestacionMedicaMvc\obj\Debug\netcoreapp2.0\PrestacionMedicaMvc.dll
+C:\Users\RADERAS\Documents\ProyDesarrollo\PrestacionMedicaMvc\obj\Debug\netcoreapp2.0\PrestacionMedicaMvc.pdb
+C:\Users\RADERAS\Documents\ProyDesarrollo\PrestacionMedicaMvc\obj\Debug\netcoreapp2.0\PrestacionMedicaMvc.csprojResolveAssemblyReference.cache

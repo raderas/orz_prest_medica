@@ -1,0 +1,76 @@
+@model PrestacionMedicaMvc.Models.Expediente
+
+@{
+    ViewData["Title"] = "Creación de expedientes";
+}
+
+<h2>Creaci&oacute;n de expedientes</h2>
+ID Empleado: @ViewBag.IDempleado
+<br>
+Empleado: @ViewBag.NombreEmpleado
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Empleado.IDempleado" class="control-label"></label>
+                <input asp-for="Empleado.IDempleado" type="text" class="form-control" value="@ViewBag.IDempleado"/>
+            </div>
+            <div class="form-group">
+                <label asp-for="Empleado.NombrePlanilla" class="control-label"></label>
+                <input asp-for="Empleado.NombrePlanilla" type="text" class="form-control" value="@ViewBag.NombreEmpleado"/>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumCarnet" class="control-label"></label>
+                <input asp-for="NumCarnet" class="form-control" />
+                <span asp-validation-for="NumCarnet" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Beneficiario" /> @Html.DisplayNameFor(model => model.Beneficiario)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Parentesco" class="control-label"></label>
+                <select asp-for="Parentesco" class="form-control" asp-items="@(new SelectList(ViewBag.listParentescos))"></select>
+                <span asp-validation-for="Parentesco" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaNacimiento" class="control-label"></label>
+                <input asp-for="FechaNacimiento" class="form-control" />
+                <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoDeducible" class="control-label"></label>
+                <input asp-for="TipoDeducible" class="form-control" />
+                <span asp-validation-for="TipoDeducible" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Activo" checked="true"/> @Html.DisplayNameFor(model => model.Activo)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Volver a la lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
